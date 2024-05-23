@@ -1,4 +1,5 @@
-import { AudioBook, Ebook, ReferenceBook } from "./book";
+import { AudioBook, Book, Ebook, ReferenceBook } from "./book";
+import { BookFilter } from "./library/BookFilter";
 import { LibrarySystem } from "./library/LibrarySystem";
 import { User } from "./user";
 
@@ -25,3 +26,10 @@ library.borrowBook("1122334455", user2); // Ahmed borrows "Digital Fortress"
 
 console.log(user1.getBorrowedBooks()); // []
 console.log(user2.getBorrowedBooks()); // [ "Digital Fortress" ]
+
+// Filter books by availability
+const availableBooksFilter: BookFilter = (book: Book) => book.isAvailable();
+console.log(library.filterBooks(availableBooksFilter));
+
+const authorFilter: BookFilter = (book: Book) => book.getAuthor() === "Dan Brown";
+console.log(library.filterBooks(authorFilter)); // ["Digital Fortress"]
