@@ -1,5 +1,6 @@
 import { Book } from "../book";
 import { User } from "../user";
+import { BookFilter } from "./BookFilter";
 
 export interface Library {
   addBook(book: Book): void;
@@ -10,4 +11,5 @@ export interface Library {
   registerUser(user: User): void;
   unregisterUser(userId: number): void;
   findUser(userId: number): User | undefined;
+  filterBooks(filter: BookFilter): Book[];
 }

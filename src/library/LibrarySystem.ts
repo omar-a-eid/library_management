@@ -1,5 +1,6 @@
 import { Book } from "../book";
 import { User } from "../user";
+import { BookFilter } from "./BookFilter";
 import { Library } from "./Library";
 
 export class LibrarySystem implements Library {
@@ -48,5 +49,9 @@ export class LibrarySystem implements Library {
 
   findUser(userId: number): User | undefined {
     return this.users.find(user => user.getId() === userId);
+  }
+
+  filterBooks(filter: BookFilter): Book[] {
+    return this.books.filter(filter);
   }
 }
