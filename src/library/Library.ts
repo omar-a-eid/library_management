@@ -7,7 +7,7 @@ export interface Library {
   findBook(isbn: string): Book | undefined;
   borrowBook(isbn:string, user: User): void;
   returnBook(isbn: string, user: User): void;
-  registerUser(userId: number): void;
+  registerUser(user: User): void;
   unregisterUser(userId: number): void;
   findUser(userId: number): User | undefined;
 }
