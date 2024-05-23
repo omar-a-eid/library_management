@@ -9,6 +9,7 @@ This project is a library management system implemented in TypeScript. It provid
 ## Features
 
 - Add, remove, and find books in the library.
+- Filter books by authors and availability.
 - Register and unregister users.
 - Borrow and return books.
 - View user's borrowed books.
